@@ -28,7 +28,13 @@ class Flashbar private constructor(private var builder: Builder) {
      * Shows a flashbar
      */
     fun show() {
+        Flashbar.currentInstance?.also {
+            if (it.isShown() || it.isShowing())
+                it.dismiss()
+        }
         flashbarContainerView.show(builder.activity)
+        Flashbar.currentInstance = this
+
     }
 
     /**
@@ -774,7 +780,10 @@ class Flashbar private constructor(private var builder: Builder) {
         const val DURATION_SHORT = 1000L
         const val DURATION_LONG = 2500L
         const val DURATION_INDEFINITE = -1L
+
+        var currentInstance: Flashbar? = null
     }
+
 
     enum class Gravity { TOP, BOTTOM }
 
