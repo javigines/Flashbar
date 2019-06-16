@@ -17,7 +17,7 @@ import com.andrognito.flashbar.anim.FlashAnimBarBuilder
 import com.andrognito.flashbar.anim.FlashAnimIconBuilder
 
 private const val DEFAULT_SHADOW_STRENGTH = 4
-private const val DEFAUT_ICON_SCALE = 1.0f
+private const val DEFAULT_ICON_SCALE = 1.0f
 
 class Flashbar private constructor(private var builder: Builder) {
 
@@ -28,12 +28,12 @@ class Flashbar private constructor(private var builder: Builder) {
      * Shows a flashbar
      */
     fun show() {
-        Flashbar.currentInstance?.also {
+        currentInstance?.also {
             if (it.isShown() || it.isShowing())
                 it.dismiss()
         }
         flashbarContainerView.show(builder.activity)
-        Flashbar.currentInstance = this
+        currentInstance = this
 
     }
 
@@ -62,7 +62,7 @@ class Flashbar private constructor(private var builder: Builder) {
         flashbarContainerView.addParent(this)
 
         flashbarView = FlashbarView(builder.activity)
-        flashbarView.init(builder.gravity, builder.castShadow, builder.shadowStrength!!)
+        flashbarView.init(builder.gravity, builder.castShadow, builder.shadowStrength)
         flashbarView.adjustWitPositionAndOrientation(builder.activity, builder.gravity)
         flashbarView.addParent(flashbarContainerView)
 
@@ -215,7 +215,7 @@ class Flashbar private constructor(private var builder: Builder) {
         internal var onNegativeActionTapListener: OnActionTapListener? = null
 
         internal var showIcon: Boolean = false
-        internal var iconScale: Float = DEFAUT_ICON_SCALE
+        internal var iconScale: Float = DEFAULT_ICON_SCALE
         internal var iconScaleType: ScaleType = CENTER_CROP
         internal var iconDrawable: Drawable? = null
         internal var iconBitmap: Bitmap? = null
@@ -472,8 +472,7 @@ class Flashbar private constructor(private var builder: Builder) {
          * Specifies the primary action text string
          */
         fun primaryActionText(text: String) = apply {
-            require(progressPosition != ProgressPosition.RIGHT,
-                    { "Cannot show action button if right progress is set" })
+            require(progressPosition != ProgressPosition.RIGHT) { "Cannot show action button if right progress is set" }
             this.primaryActionText = text
         }
 
@@ -654,11 +653,9 @@ class Flashbar private constructor(private var builder: Builder) {
          * Specifies if the icon should be shown. Also configures its scale factor and scale type
          */
         @JvmOverloads
-        fun showIcon(scale: Float = DEFAUT_ICON_SCALE, scaleType: ScaleType = CENTER_CROP) = apply {
-            require(progressPosition != ProgressPosition.LEFT,
-                    { "Cannot show icon if left progress is set" })
-            require(scale > 0,
-                    { "Icon scale cannot be negative or zero" })
+        fun showIcon(scale: Float = DEFAULT_ICON_SCALE, scaleType: ScaleType = CENTER_CROP) = apply {
+            require(progressPosition != ProgressPosition.LEFT) { "Cannot show icon if left progress is set" }
+            require(scale > 0) { "Icon scale cannot be negative or zero" }
 
             this.showIcon = true
             this.iconScale = scale

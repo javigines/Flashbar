@@ -57,7 +57,7 @@ internal class FlashbarView(context: Context) : LinearLayout(context) {
         if (!isMarginCompensationApplied) {
             isMarginCompensationApplied = true
 
-            val params = layoutParams as ViewGroup.MarginLayoutParams
+            val params = layoutParams as MarginLayoutParams
             when (gravity) {
                 TOP -> params.topMargin = -TOP_COMPENSATION_MARGIN
                 BOTTOM -> params.bottomMargin = -BOTTOM_COMPENSATION_MARGIN
@@ -93,7 +93,7 @@ internal class FlashbarView(context: Context) : LinearLayout(context) {
         val flashbarViewLp = RelativeLayout.LayoutParams(MATCH_PARENT, WRAP_CONTENT)
         val statusBarHeight = activity.getStatusBarHeightInPx()
 
-        val flashbarViewContentLp = fbContent.layoutParams as LinearLayout.LayoutParams
+        val flashbarViewContentLp = fbContent.layoutParams as LayoutParams
 
         when (gravity) {
             TOP -> {
