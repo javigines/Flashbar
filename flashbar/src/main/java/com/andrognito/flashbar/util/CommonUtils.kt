@@ -47,7 +47,7 @@ internal fun Activity.getNavigationBarSizeInPx(): Int {
 }
 
 internal fun Activity?.getRootView(): ViewGroup? {
-    if (this == null || window == null || window.decorView == null) {
+    if (this == null || window == null) {
         return null
     }
     return window.decorView as ViewGroup

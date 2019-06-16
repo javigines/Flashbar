@@ -4,7 +4,7 @@ import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Context
-import android.support.annotation.InterpolatorRes
+import androidx.annotation.InterpolatorRes
 import android.view.View
 import android.view.animation.AnticipateInterpolator
 import android.view.animation.Interpolator
