@@ -39,6 +39,7 @@ internal fun Activity.getNavigationBarSizeInPx(): Int {
     val appUsableScreenSize = getAppUsableScreenSize()
     val navigationBarPosition = getNavigationBarPosition()
 
+    if(!hasVisibleNavigationBar()) return 0
     return if (navigationBarPosition == LEFT || navigationBarPosition == RIGHT) {
         realScreenSize.x - appUsableScreenSize.x
     } else {
@@ -87,6 +88,21 @@ private fun Activity.getAppUsableScreenSize(): Point {
     defaultDisplay.getSize(size)
     return size
 }
+
+private fun Activity.hasVisibleNavigationBar(): Boolean {
+	val rootView = (window.decorView as ViewGroup)
+	var hasNav = false
+	for (i in 0 until rootView.childCount) {
+		val child = rootView.getChildAt(i)
+		if (child.id == android.R.id.navigationBarBackground) {
+			hasNav = child.visibility == View.VISIBLE
+		}
+	}
+
+    return hasNav
+}
+
+
 
 inline fun <T : View> T.afterMeasured(crossinline f: T.() -> Unit) {
     viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
