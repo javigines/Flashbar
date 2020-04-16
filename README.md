@@ -1,9 +1,12 @@
 
-# Flashbar
+# Flashbar Reborn
+Original repository: https://github.com/aritraroy/Flashbar
+
 A highly customizable, powerful and easy-to-use alerting library for Android.
 
 ### Specs
-[![Download](https://api.bintray.com/packages/aritraroy/maven/flashbar/images/download.svg)](https://bintray.com/aritraroy/maven/flashbar/_latestVersion) [![API](https://img.shields.io/badge/API-14%2B-orange.svg?style=flat)](https://android-arsenal.com/api?level=14) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23308-blue.svg)](http://androidweekly.net/issues/issue-308) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Flashbar-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6933)
+[![](https://jitpack.io/v/javigines/FlashbarReborn.svg)](https://jitpack.io/#javigines/FlashbarReborn)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
 
 
 This library allows you to show messages or alerts in your app **quickly and easily**. It can be used as an alternative to `Snackbar` or `Toast` and offers a plethora of useful features and customization options for you to play with.
@@ -44,24 +47,21 @@ It has been written **100% in Kotlin**. ❤️
 * [Contribution](#contribution)
 * [License](#license)
 
-### Spread Some :heart:
-[![GitHub followers](https://img.shields.io/github/followers/aritraroy.svg?style=social&label=Follow)](https://github.com/aritraroy)  [![Twitter Follow](https://img.shields.io/twitter/follow/aritraroy.svg?style=social)](https://twitter.com/aritraroy) 
-
 # Download
 
-This library is available in **jCenter** which is the default Maven repository used in Android Studio. You can also import this library from source as a module.
+This library is available in **jitpack**. You can also import this library from source as a module.
  
 ```groovy
 dependencies {
     // other dependencies here
-    implementation 'com.goodpath.flashbarreborn:flashbar:{latest_version}'
+    implementation 'com.github.javigines:FlashbarReborn:{latest_version}'
 }
 ```
 
 # Sample Project
 We have an exhaustive sample project demonstrating almost every feature of the library in both languages - Java & Kotlin.
 
-Checkout the Java samples [here](https://github.com/aritraroy/Flashbar/blob/develop/app/src/main/java/com/andrognito/flashbardemo/JavaSampleActivity.java) and the Kotlin samples [here](https://github.com/aritraroy/Flashbar/blob/develop/app/src/main/java/com/andrognito/flashbardemo/KotlinSampleActivity.kt).
+Checkout the Java samples [here](https://github.com/javigines/FlashbarReborn/blob/master/app/src/main/java/com/goodpath/flashbarreborndemo/JavaSampleActivity.java) and the Kotlin samples [here](https://github.com/javigines/FlashbarReborn/blob/master/app/src/main/java/com/goodpath/flashbarreborndemo/KotlinSampleActivity.kt).
 
 # Usage
 It is recommended to check the sample project to get a complete understanding of all the features offered by the library.
@@ -556,14 +556,6 @@ Flashbar.Builder(this)
         .build()
 ```
 
-# Roadmap
-These are some of the prioritized features in the pipeline awaiting to be implemented in the near future - 
-
-- [ ] Add coordinator layout support
-- [ ] Add flashbar manager for queue management
-- [ ] Add custom layout inflation support
-- [ ] Improve shadow rendering
-
 # Contribution
 
 I highly encourage the community to step forward and improve this library further. You can fix any reported bug, propose or implement new features, write tests, etc.
@@ -574,17 +566,6 @@ Here is a quick list of things to remember -
 * Check the roadmap to see if you can help in implementing any new feature,
 * You can contribute by writing unit and integration tests for this library,
 * If you have any new idea that aligns with the goal of this library, feel free to raise a feature request and discuss it.
-
-# About The Author
-
-### Aritra Roy
-
-Design-focussed Engineer. Full-stack Developer. Hardcore Android Geek. UI/UX Designer. Part-time Blogger.
-
-<a href="https://play.google.com/store/apps/details?id=com.codexapps.andrognito&hl=en" target="_blank"><img src="https://github.com/aritraroy/social-icons/blob/master/play-store-icon.png?raw=true" width="60"></a> <a href="https://blog.aritraroy.in/" target="_blank"><img src="https://github.com/aritraroy/social-icons/blob/master/medium-icon.png?raw=true" width="60"></a>
-<a href="http://stackoverflow.com/users/2858654/aritra-roy" target="_blank"><img src="https://github.com/aritraroy/social-icons/blob/master/stackoverflow-icon.png?raw=true" width="60"></a>
-<a href="https://twitter.com/aritraroy" target="_blank"><img src="https://github.com/aritraroy/social-icons/blob/master/twitter-icon.png?raw=true" width="60"></a>
-<a href="http://linkedin.com/in/aritra-roy"><img src="https://github.com/aritraroy/social-icons/blob/master/linkedin-icon.png?raw=true" width="60"></a>
 
 
 # License
