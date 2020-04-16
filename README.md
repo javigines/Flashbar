@@ -54,7 +54,7 @@ This library is available in **jCenter** which is the default Maven repository u
 ```groovy
 dependencies {
     // other dependencies here
-    implementation 'com.andrognito.flashbar:flashbar:{latest_version}'
+    implementation 'com.goodpath.flashbarreborn:flashbar:{latest_version}'
 }
 ```
 

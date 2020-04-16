@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
@@ -6,17 +6,16 @@ android {
     compileSdkVersion versions.sdkTarget
 
     defaultConfig {
-        applicationId "com.goodpath.flashbarreborndemo"
         minSdkVersion versions.sdkMin
         targetSdkVersion versions.sdkTarget
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "1.1.0"
+
+        consumerProguardFiles 'proguard-rules.pro'
     }
 }
 
 dependencies {
-    implementation project(':flashbarreborn')
-
     implementation "androidx.appcompat:appcompat:$versions.appcompat"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
 }

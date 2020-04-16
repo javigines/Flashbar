@@ -1,12 +1,12 @@
-package com.andrognito.flashbardemo
+package com.goodpath.flashbarreborndemo
 
 import android.graphics.Typeface
 import android.os.Bundle
 import androidx.core.content.ContextCompat
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.andrognito.flashbar.Flashbar
-import com.andrognito.flashbar.anim.FlashAnim
+import com.goodpath.flashbarreborn.Flashbar
+import com.goodpath.flashbarreborn.anim.FlashAnim
 import kotlinx.android.synthetic.main.activity_main.*
 
 class KotlinSampleActivity : AppCompatActivity() {
